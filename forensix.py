@@ -218,13 +218,16 @@ def main():
                     print(f"  [{r.get('category', '?')}] {r.get('file_name', '?')}")
             else:
                 print("[!] Hash not found in database")
-                
+
+                 elif args.command == "status":
+            engine.display_status()
+            
         elif args.command == "report":
             output = args.output
             if not output.endswith(f".{args.format}"):
                 output = f"{output}.{args.format}"
             engine.export_report_json(output)
-            
+
     except KeyboardInterrupt:
         print("\n[!] Interrupted")
     finally:
