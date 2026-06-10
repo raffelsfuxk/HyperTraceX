@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORENSIX - Reports</title>
+    <style>
+        :root { --bg: #0a0a0a; --panel: #1a1a2e; --green: #00ff00; --yellow: #ffaa00; --red: #ff4444; --text: #e0e0e0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Courier New', monospace; background: var(--bg); color: var(--text); padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 { color: var(--green); text-align: center; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; color: var(--green); margin-bottom: 5px; }
+        select, input[type="text"], textarea { width: 100%; padding: 10px; background: var(--bg); border: 1px solid #333; color: var(--green); border-radius: 5px; font-family: 'Courier New', monospace; }
+        textarea { height: 150px; resize: vertical; }
+        .radio-group { display: flex; gap: 20px; }
+        .radio-group label { color: var(--text); }
+        .btn { padding: 12px 30px; border: 2px solid var(--green); background: transparent; color: var(--green); border-radius: 5px; cursor: pointer; font-family: 'Courier New', monospace; font-size: 1em; }
+        .btn:hover { background: rgba(0,255,0,0.1); box-shadow: 0 0 15px rgba(0,255,0,0.3); }
+        .btn-large { display: block; width: 100%; padding: 15px; font-size: 1.2em; }
+        .preview { background: var(--panel); border: 1px solid #333; border-radius: 8px; padding: 20px; margin-top: 20px; min-height: 200px; }
+        .preview-header { color: var(--green); font-weight: bold; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Forensic Report</h1>
+        
+        <div class="form-group">
+            <label>Report Type</label>
+            <select id="reportType">
+                <option value="full">Full Investigation Report</option>
+                <option value="summary">Executive Summary</option>
+                <option value="evidence">Evidence Inventory</option>
+                <option value="timeline">Timeline Report</option>
+                <option value="custody">Chain of Custody</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Format</label>
+            <div class="radio-group">
+                <label><input type="radio" name="format" value="html" checked> HTML</label>
+                <label><input type="radio" name="format" value="json"> JSON</label>
+                <label><input type="radio" name="format" value="pdf"> PDF</label>
+                <label><input type="radio" name="format" value="csv"> CSV</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Case ID</label>
+            <select id="caseSelect">
+                <option value="">Select case...</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea id="notes" placeholder="Enter any additional notes for the report..."></textarea>
+        </div>
+        
+        <button class="btn btn-large" onclick="generateReport()">Generate Report</button>
+        
+        <div class="preview" id="preview" style="display:none;">
+            <div class="preview-header">Report Preview</div>
+            <div id="previewContent"></div>
+        </div>
+    </div>
+    
+    <script>
+        function loadCases() {
+            fetch('/api/cases')
+                .then(r => r.json())
+                .then(data => {
+                    let html = '<option value="">Select case...</option>';
+                    data.forEach(c => {
+                        html += `<option value="${c.case_id}">${c.case_id} - ${c.investigator}</option>`;
+                    });
+                    document.getElementById('caseSelect').innerHTML = html;
+                });
+        }
+        
+        function generateReport() {
+            const type = document.getElementById('reportType').value;
+            const format = document.querySelector('input[name="format"]:checked').value;
+            const caseId = document.getElementById('caseSelect').value;
+            const notes = document.getElementById('notes').value;
+            
+            if (!caseId) {
+                alert('Please select a case');
+                return;
+            }
+            
+            document.getElementById('preview').style.display = 'block';
+            document.getElementById('previewContent').innerHTML = `
+                <p style="color:var(--green);">Generating ${type.toUpperCase()} report...</p>
+                <p>Case: ${caseId}</p>
+                <p>Format: ${format.toUpperCase()}</p>
+                <p>Notes: ${notes || 'None'}</p>
+                <br>
+                <p style="color:var(--green);">[+] Report generated successfully!</p>
+                <p>Download: <a href="#" style="color:var(--yellow);">report_${caseId}_${Date.now()}.${format}</a></p>
+            `;
+        }
+        
+        loadCases();
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+    "version": "1.0.0",
+    "case": {
+        "case_id": "",
+        "investigator": "",
+        "organization": "",
+        "description": ""
+    },
+    "storage": {
+        "output_dir": "./output",
+        "temp_dir": "/tmp/forensix",
+        "evidence_drive": "auto",
+        "min_free_space_gb": 10
+    },
+    "acquisition": {
+        "mode": "logical",
+        "hash_algorithms": ["sha256", "sha1", "md5"],
+        "verify_after_copy": true,
+        "preserve_timestamps": true
+    },
+    "logging": {
+        "level": "INFO",
+        "file": "forensix.log",
+        "max_size_mb": 100
+    },
+    "chain_of_custody": {
+        "enabled": true,
+        "sign_reports": true
+    },
+    "dashboard": {
+        "enabled": false,
+        "host": "127.0.0.1",
+        "port": 8888
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORENSIX - Case Management</title>
+    <style>
+        :root {
+            --bg: #0a0a0a; --panel: #1a1a2e; --green: #00ff00;
+            --yellow: #ffaa00; --red: #ff4444; --text: #e0e0e0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Courier New', monospace; background: var(--bg); color: var(--text); padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { color: var(--green); text-align: center; margin-bottom: 30px; text-shadow: 0 0 15px rgba(0,255,0,0.3); }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 30px; }
+        .stat-card { background: var(--panel); border: 1px solid #333; border-radius: 8px; padding: 20px; text-align: center; }
+        .stat-card .number { font-size: 2.5em; font-weight: bold; color: var(--green); }
+        .stat-card .label { color: #888; font-size: 0.9em; margin-top: 5px; }
+        .panel { background: var(--panel); border: 1px solid #333; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
+        .panel-header { background: rgba(0,255,0,0.05); padding: 15px 20px; border-bottom: 1px solid #333; font-weight: bold; color: var(--green); }
+        .panel-body { padding: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: rgba(0,255,0,0.05); color: var(--green); padding: 12px; text-align: left; }
+        td { padding: 10px 12px; border-bottom: 1px solid #333; }
+        tr:hover { background: rgba(0,255,0,0.02); }
+        .btn { padding: 10px 20px; border: 1px solid var(--green); background: transparent; color: var(--green); border-radius: 5px; cursor: pointer; font-family: 'Courier New', monospace; }
+        .btn:hover { background: rgba(0,255,0,0.1); }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: bold; }
+        .badge-active { background: rgba(0,255,0,0.2); color: var(--green); }
+        .badge-closed { background: rgba(255,68,68,0.2); color: var(--red); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FORENSIX Case Management</h1>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number" id="total-cases">0</div>
+                <div class="label">Total Cases</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="active-cases">0</div>
+                <div class="label">Active Cases</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="total-evidence">0</div>
+                <div class="label">Evidence Items</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="total-size">0 GB</div>
+                <div class="label">Total Size</div>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <div class="panel-header">Case List</div>
+            <div class="panel-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Case ID</th>
+                            <th>Investigator</th>
+                            <th>Organization</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="case-list">
+                        <tr><td colspan="6" style="text-align:center;">Loading cases...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div style="text-align:center;">
+            <button class="btn" onclick="newCase()">+ New Case</button>
+            <button class="btn" onclick="refreshCases()">Refresh</button>
+        </div>
+    </div>
+    
+    <script>
+        function refreshCases() {
+            fetch('/api/cases')
+                .then(r => r.json())
+                .then(data => {
+                    let html = '';
+                    data.forEach(c => {
+                        html += `<tr>
+                            <td>${c.case_id}</td>
+                            <td>${c.investigator}</td>
+                            <td>${c.organization || '-'}</td>
+                            <td><span class="badge badge-${c.status === 'open' ? 'active' : 'closed'}">${c.status}</span></td>
+                            <td>${c.created_at ? c.created_at.substring(0, 10) : '-'}</td>
+                            <td><button class="btn" onclick="openCase('${c.case_id}')">Open</button></td>
+                        </tr>`;
+                    });
+                    document.getElementById('case-list').innerHTML = html || '<tr><td colspan="6">No cases found</td></tr>';
+                });
+        }
+        
+        function newCase() {
+            const id = prompt('Case ID:');
+            const investigator = prompt('Investigator:');
+            if (id && investigator) {
+                fetch('/api/case', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({case_id: id, investigator: investigator})
+                }).then(() => refreshCases());
+            }
+        }
+        
+        function openCase(id) {
+            window.location.href = `/case/${id}`;
+        }
+        
+        refreshCases();
+    </script>
+</body>
+</html>

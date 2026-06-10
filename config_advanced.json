@@ -1,0 +1,95 @@
+{
+    "version": "1.0.0",
+    "enterprise": {
+        "multi_user": true,
+        "ldap_integration": false,
+        "sso_enabled": false,
+        "session_timeout_minutes": 60,
+        "max_concurrent_users": 10,
+        "password_policy": {
+            "min_length": 12,
+            "require_uppercase": true,
+            "require_number": true,
+            "require_special": true,
+            "max_age_days": 90
+        }
+    },
+    "security": {
+        "encryption": "AES-256",
+        "tls_enabled": false,
+        "cert_path": "",
+        "key_path": "",
+        "allowed_ips": [],
+        "rate_limiting": true,
+        "max_requests_per_minute": 100
+    },
+    "storage": {
+        "output_dir": "./output",
+        "temp_dir": "/tmp/forensix",
+        "evidence_dir": "./evidence",
+        "backup_dir": "./backups",
+        "max_file_size_gb": 10,
+        "auto_cleanup_days": 30
+    },
+    "performance": {
+        "max_threads": 8,
+        "hash_buffer_size_mb": 64,
+        "carve_chunk_size_mb": 4,
+        "db_cache_size_mb": 128,
+        "lazy_loading": true
+    },
+    "ai": {
+        "enabled": true,
+        "image_model": "resnet50",
+        "text_model": "distilbert",
+        "confidence_threshold": 0.75,
+        "gpu_enabled": false
+    },
+    "plugins": {
+        "auto_update": true,
+        "marketplace_url": "https://plugins.forensix.dev",
+        "allow_unsigned": false,
+        "sandbox_mode": true
+    },
+    "api": {
+        "host": "127.0.0.1",
+        "port": 5000,
+        "cors_enabled": false,
+        "rate_limit": 100,
+        "jwt_secret": "",
+        "jwt_expiry_hours": 24
+    },
+    "dashboard": {
+        "host": "127.0.0.1",
+        "port": 8888,
+        "theme": "dark",
+        "refresh_interval_seconds": 5,
+        "max_log_entries": 1000
+    },
+    "logging": {
+        "level": "INFO",
+        "json_format": true,
+        "syslog_enabled": false,
+        "elasticsearch_enabled": false,
+        "elasticsearch_url": "http://localhost:9200",
+        "retention_days": 90
+    },
+    "compliance": {
+        "iso27001": true,
+        "pci_dss": true,
+        "hipaa": false,
+        "gdpr": true,
+        "audit_trail": true,
+        "chain_of_custody": true
+    },
+    "notifications": {
+        "email_enabled": false,
+        "smtp_host": "",
+        "smtp_port": 587,
+        "smtp_user": "",
+        "slack_enabled": false,
+        "slack_webhook": "",
+        "discord_enabled": false,
+        "discord_webhook": ""
+    }
+}

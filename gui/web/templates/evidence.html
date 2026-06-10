@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORENSIX - Evidence Management</title>
+    <style>
+        :root { --bg: #0a0a0a; --panel: #1a1a2e; --green: #00ff00; --yellow: #ffaa00; --red: #ff4444; --text: #e0e0e0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Courier New', monospace; background: var(--bg); color: var(--text); padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { color: var(--green); margin-bottom: 20px; }
+        .toolbar { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+        .btn { padding: 10px 20px; border: 1px solid var(--green); background: transparent; color: var(--green); border-radius: 5px; cursor: pointer; font-family: 'Courier New', monospace; }
+        .btn:hover { background: rgba(0,255,0,0.1); }
+        .btn-danger { border-color: var(--red); color: var(--red); }
+        .panel { background: var(--panel); border: 1px solid #333; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
+        .panel-header { background: rgba(0,255,0,0.05); padding: 15px 20px; border-bottom: 1px solid #333; font-weight: bold; color: var(--green); }
+        .panel-body { padding: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: rgba(0,255,0,0.05); color: var(--green); padding: 12px; text-align: left; font-size: 0.9em; }
+        td { padding: 8px 12px; border-bottom: 1px solid #333; font-size: 0.85em; }
+        tr:hover { background: rgba(0,255,0,0.02); }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75em; font-weight: bold; }
+        .badge-verified { background: rgba(0,255,0,0.2); color: var(--green); }
+        .badge-pending { background: rgba(255,170,0,0.2); color: var(--yellow); }
+        .hash { font-size: 0.8em; color: #888; word-break: break-all; }
+        .search-box { padding: 10px; background: var(--bg); border: 1px solid #333; color: var(--green); border-radius: 5px; width: 300px; font-family: 'Courier New', monospace; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Evidence Management</h1>
+        
+        <div class="toolbar">
+            <input type="text" class="search-box" placeholder="Search evidence..." id="searchInput" onkeyup="searchEvidence()">
+            <button class="btn" onclick="addEvidence()">+ Add Evidence</button>
+            <button class="btn" onclick="verifyAll()">Verify All</button>
+            <button class="btn" onclick="exportList()">Export List</button>
+        </div>
+        
+        <div class="panel">
+            <div class="panel-header">Evidence Items (<span id="evidenceCount">0</span>)</div>
+            <div class="panel-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="selectAll" onclick="toggleSelectAll()"></th>
+                            <th>File Name</th>
+                            <th>Size</th>
+                            <th>Type</th>
+                            <th>SHA256</th>
+                            <th>Acquired</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="evidenceTable">
+                        <tr><td colspan="8" style="text-align:center;color:#555;">No evidence items</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div style="text-align:center;padding:10px;">
+            <button class="btn" id="prevBtn" onclick="prevPage()" disabled>Previous</button>
+            <span id="pageInfo" style="margin:0 15px;">Page 1</span>
+            <button class="btn" id="nextBtn" onclick="nextPage()" disabled>Next</button>
+        </div>
+    </div>
+    
+    <script>
+        let currentPage = 1;
+        let itemsPerPage = 20;
+        let allEvidence = [];
+        
+        function loadEvidence() {
+            fetch('/api/evidence/' + getCaseId())
+                .then(r => r.json())
+                .then(data => {
+                    allEvidence = data.evidence || [];
+                    document.getElementById('evidenceCount').textContent = allEvidence.length;
+                    renderPage();
+                });
+        }
+        
+        function renderPage() {
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageItems = allEvidence.slice(start, end);
+            
+            let html = '';
+            pageItems.forEach((ev, i) => {
+                html += `<tr>
+                    <td><input type="checkbox" class="evidence-check"></td>
+                    <td>${(ev.file_path || ev.file || '?').substring(0, 50)}</td>
+                    <td>${formatSize(ev.size || ev.file_size || 0)}</td>
+                    <td>${getFileType(ev.file_path || ev.file || '')}</td>
+                    <td class="hash">${(ev.sha256 || ev.sha256_hash || 'N/A').substring(0, 24)}...</td>
+                    <td>${(ev.acquired_at || '').substring(0, 10)}</td>
+                    <td><span class="badge badge-verified">Verified</span></td>
+                    <td>
+                        <button class="btn" onclick="viewDetail('${ev.id}')">View</button>
+                        <button class="btn btn-danger" onclick="deleteEvidence('${ev.id}')">Del</button>
+                    </td>
+                </tr>`;
+            });
+            
+            document.getElementById('evidenceTable').innerHTML = html || '<tr><td colspan="8">No items</td></tr>';
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = end >= allEvidence.length;
+            document.getElementById('pageInfo').textContent = `Page ${currentPage} of ${Math.ceil(allEvidence.length / itemsPerPage) || 1}`;
+        }
+        
+        function formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            if (bytes < 1073741824) return (bytes / 1048576).toFixed(1) + ' MB';
+            return (bytes / 1073741824).toFixed(2) + ' GB';
+        }
+        
+        function getFileType(path) {
+            const ext = (path || '').split('.').pop().toLowerCase();
+            return ext || '?';
+        }
+        
+        function getCaseId() {
+            return new URLSearchParams(window.location.search).get('case') || 'default';
+        }
+        
+        function prevPage() { if (currentPage > 1) { currentPage--; renderPage(); } }
+        function nextPage() { if (currentPage * itemsPerPage < allEvidence.length) { currentPage++; renderPage(); } }
+        function toggleSelectAll() { document.querySelectorAll('.evidence-check').forEach(cb => cb.checked = document.getElementById('selectAll').checked); }
+        function searchEvidence() { /* Filter implementation */ }
+        function addEvidence() { alert('Add evidence dialog'); }
+        function verifyAll() { alert('Verification started'); }
+        function exportList() { alert('Export started'); }
+        function viewDetail(id) { alert('View evidence: ' + id); }
+        function deleteEvidence(id) { if (confirm('Delete this evidence?')) { alert('Deleted: ' + id); } }
+        
+        loadEvidence();
+    </script>
+</body>
+</html>

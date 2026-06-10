@@ -1,0 +1,60 @@
+# Output files
+output/
+*.img
+*.raw
+*.dd
+*.cap
+*.pcap
+*.pcapng
+*.csv
+*.ivs
+*.hccapx
+*.22000
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Log files
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Compiled C++ modules
+native/*.so
+native/*.o
+native/raw_reader_test
+native/mft_parser_test
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Credentials
+credentials.txt
+*.cred
+passwords.txt
+
+# Temporary files
+/tmp/
+temp/
+tmp/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
