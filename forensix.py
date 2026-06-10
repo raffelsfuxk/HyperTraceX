@@ -110,7 +110,10 @@ EXAMPLES:
     report_parser = subparsers.add_parser("report", help="Generate report")
     report_parser.add_argument("--format", default="html", choices=["json", "html"], help="Report format")
     report_parser.add_argument("--output", required=True, help="Output file")
-    
+
+    # status
+    subparsers.add_parser("status", help="Show framework status")
+
     return parser
 
 
