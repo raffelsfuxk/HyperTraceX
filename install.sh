@@ -21,15 +21,8 @@ apt install -y \
     python3 \
     python3-pip \
     python3-dev \
-    dd \
-    mount \
-    lsblk \
-    md5sum \
-    sha1sum \
-    sha256sum \
     sqlite3 \
     testdisk \
-    photorec \
     tesseract-ocr \
     p7zip-full \
     unrar-free
