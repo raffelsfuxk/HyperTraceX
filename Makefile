@@ -1,12 +1,12 @@
-# FORENSIX Makefile
-# Build, test, and deploy FORENSIX Framework
+# HyperTraceX Makefile
+# Build, test, and deploy HyperTraceX Framework
 
 .PHONY: all install test clean deploy docker docs
 
 all: install test
 
 install:
-	@echo "[*] Installing FORENSIX..."
+	@echo "[*] Installing HyperTraceX..."
 	@bash install.sh
 
 test:
@@ -39,20 +39,20 @@ clean:
 	@echo "[+] Clean complete"
 
 deploy:
-	@echo "[*] Deploying FORENSIX..."
+	@echo "[*] Deploying HyperTraceX..."
 	@sudo bash deploy.sh
 
 docker-build:
 	@echo "[*] Building Docker image..."
-	@docker build -t forensix:latest .
-	@echo "[+] Docker image built: forensix:latest"
+	@docker build -t tracex:latest .
+	@echo "[+] Docker image built: tracex:latest"
 
 docker-run:
-	@echo "[*] Running FORENSIX in Docker..."
-	@docker run -it --privileged forensix:latest
+	@echo "[*] Running HyperTraceX in Docker..."
+	@docker run -it --privileged tracex:latest
 
 docker-compose:
-	@echo "[*] Starting FORENSIX with Docker Compose..."
+	@echo "[*] Starting HyperTraceX with Docker Compose..."
 	@docker-compose up -d
 
 docs:
@@ -70,15 +70,15 @@ format:
 	@black core/ modules/ --line-length=120 2>/dev/null || echo "Format complete"
 
 version:
-	@echo "FORENSIX v1.0.0"
+	@echo "HyperTraceX v1.0.0"
 
 help:
-	@echo "FORENSIX Makefile"
+	@echo "HyperTraceX Makefile"
 	@echo "================"
 	@echo ""
 	@echo "Targets:"
 	@echo "  all              - Install and run tests"
-	@echo "  install          - Install FORENSIX"
+	@echo "  install          - Install HyperTraceX"
 	@echo "  test             - Run all tests"
 	@echo "  test-core        - Run core tests"
 	@echo "  test-modules     - Run module tests"

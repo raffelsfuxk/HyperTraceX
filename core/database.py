@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Database Manager for FORENSIX Framework - SQLite Case & Evidence Management."""
+"""Database Manager for HyperTraceX Framework - SQLite Case & Evidence Management."""
 
 import sqlite3
 import json
@@ -9,7 +9,7 @@ from typing import Dict, List, Optional, Any
 class DatabaseManager:
     """Handle case management, evidence tracking, and audit logging."""
     
-    def __init__(self, db_path: str = "forensix.db"):
+    def __init__(self, db_path: str = "tracex.db"):
         self.db_path = db_path
         self.conn = sqlite3.connect(db_path, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row

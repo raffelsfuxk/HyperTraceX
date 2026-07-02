@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Web Dashboard - Real-time monitoring interface."""
+"""HyperTraceX Web Dashboard - Real-time monitoring interface."""
 
 import os
 import time
@@ -12,7 +12,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 try:
@@ -25,7 +25,7 @@ except ImportError:
 
 class WebDashboard:
     """
-    Real-time Web Dashboard for FORENSIX.
+    Real-time Web Dashboard for HyperTraceX.
     
     Features:
         - Live case monitoring
@@ -41,7 +41,7 @@ class WebDashboard:
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FORENSIX Dashboard</title>
+        <title>HyperTraceX Dashboard</title>
         <style>
             * { margin: 0; padding: 0; box-sizing: border-box; }
             body {
@@ -149,7 +149,7 @@ class WebDashboard:
     </head>
     <body>
         <div class="header">
-            <h1>FORENSIX Dashboard</h1>
+            <h1>HyperTraceX Dashboard</h1>
             <p class="subtitle">Real-Time Digital Forensics Monitor</p>
             <p class="subtitle blink">● LIVE</p>
         </div>
@@ -195,7 +195,7 @@ class WebDashboard:
         </div>
 
         <div class="footer">
-            FORENSIX v1.0.0 | raffelsfuxk
+            HyperTraceX v1.0.0 | raffelsfuxk
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
@@ -203,7 +203,7 @@ class WebDashboard:
             const socket = io();
             
             socket.on('connect', function() {
-                console.log('Connected to FORENSIX Dashboard');
+                console.log('Connected to HyperTraceX Dashboard');
             });
 
             socket.on('update', function(data) {
@@ -288,7 +288,7 @@ class WebDashboard:
         thread = threading.Thread(target=emit_data, daemon=True)
         thread.start()
         
-        print(f"\n[*] FORENSIX Dashboard started")
+        print(f"\n[*] HyperTraceX Dashboard started")
         print(f"    URL: http://{self.host}:{self.port}")
         
         try:

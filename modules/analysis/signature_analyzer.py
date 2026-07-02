@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Signature Analyzer - File type detection via magic bytes."""
+"""HyperTraceX Signature Analyzer - File type detection via magic bytes."""
 
 import os
 import json
@@ -9,7 +9,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Registry Parser - Windows Registry Hive Analysis."""
+"""HyperTraceX Registry Parser - Windows Registry Hive Analysis."""
 
 import os
 import struct
@@ -10,7 +10,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

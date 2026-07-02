@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Desktop GUI Dialogs - Advanced dialog windows."""
+"""HyperTraceX Desktop GUI Dialogs - Advanced dialog windows."""
 
 import os
 import sys

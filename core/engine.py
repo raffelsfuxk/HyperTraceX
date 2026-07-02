@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-FORENSIX Core Engine
+HyperTraceX Core Engine
 Enterprise Digital Forensics Platform
 Version: 1.0.0
 """
@@ -26,7 +26,7 @@ __author__ = "raffelsfuxk"
 
 class ForensixEngine:
     """
-    FORENSIX Core Acquisition & Analysis Engine.
+    HyperTraceX Core Acquisition & Analysis Engine.
     
     Features:
         - Multi-threaded evidence acquisition
@@ -47,9 +47,9 @@ class ForensixEngine:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
         self.logger = setup_logging(self.output_dir, self.config.get("logging", {}).get("level", "INFO"))
-        self.logger.info(f"FORENSIX Engine v{__version__} initializing")
+        self.logger.info(f"HyperTraceX Engine v{__version__} initializing")
         
-        self.db = DatabaseManager(self.config.get("database", {}).get("path", "forensix.db"))
+        self.db = DatabaseManager(self.config.get("database", {}).get("path", "tracex.db"))
         
         self.running = False
         self.current_case_id = None
@@ -61,12 +61,12 @@ class ForensixEngine:
         signal.signal(signal.SIGTERM, self._signal_handler)
         
         self._display_banner()
-        self.logger.info("FORENSIX Engine initialized")
+        self.logger.info("HyperTraceX Engine initialized")
     
     def _display_banner(self):
         banner = f"""
     ╔══════════════════════════════════════════════════════════╗
-    ║     FORENSIX - Enterprise Digital Forensics Platform     ║
+    ║     HyperTraceX - Enterprise Digital Forensics Platform     ║
     ║     Version {__version__}  |  Ethical Use Only                 ║
     ╚══════════════════════════════════════════════════════════╝
     """
@@ -80,7 +80,7 @@ class ForensixEngine:
     def check_root(self) -> bool:
         if os.geteuid() != 0:
             self.logger.critical("Root privileges required")
-            print("[ERROR] Root privileges required! Run with: sudo python3 forensix.py")
+            print("[ERROR] Root privileges required! Run with: sudo python3 tracex.py")
             sys.exit(1)
         return True
     
@@ -270,7 +270,7 @@ class ForensixEngine:
         print(f"[+] Report saved: {filepath}")
     
     def shutdown(self):
-        self.logger.info("Shutting down FORENSIX Engine")
+        self.logger.info("Shutting down HyperTraceX Engine")
         self.running = False
         self.db.close()
         print("[+] Shutdown complete")
@@ -308,7 +308,7 @@ class ForensixEngine:
     
     def display_status(self):
         status = self.get_status()
-        print(f"\n[FORENSIX Status]")
+        print(f"\n[HyperTraceX Status]")
         print(f"  Version:      {status['version']}")
         print(f"  Case ID:      {status['current_case'] or 'None'}")
         print(f"  Output:       {status['output_dir']}")
@@ -320,7 +320,7 @@ class ForensixEngine:
         """Main interactive menu."""
         menu = f"""
 ╔══════════════════════════════════════════════════╗
-║        FORENSIX Digital Forensics Suite          ║
+║        HyperTraceX Digital Forensics Suite          ║
 ╠══════════════════════════════════════════════════╣
 ║  1. Create New Case                             ║
 ║  2. Scan Drives                                 ║

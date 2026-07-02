@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX WiFi Extractor - Extract saved WiFi credentials from Windows."""
+"""HyperTraceX WiFi Extractor - Extract saved WiFi credentials from Windows."""
 
 import os
 import re
@@ -10,7 +10,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX AI Image Classifier - AI-powered image categorization for forensics."""
+"""HyperTraceX AI Image Classifier - AI-powered image categorization for forensics."""
 
 import os
 import json
@@ -10,7 +10,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 try:

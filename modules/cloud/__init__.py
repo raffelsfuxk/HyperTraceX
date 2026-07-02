@@ -1,4 +1,4 @@
-# FORENSIX Cloud Forensics Modules
+# HyperTraceX Cloud Forensics Modules
 from .aws_collector import AWSCollector
 from .azure_collector import AzureCollector
 from .gcp_collector import GCPCollector

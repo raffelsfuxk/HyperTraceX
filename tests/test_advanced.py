@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Advanced Unit Tests - Testing all modules."""
+"""HyperTraceX Advanced Unit Tests - Testing all modules."""
 
 import os
 import sys

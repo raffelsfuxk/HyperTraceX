@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-FORENSIX Community Contribution Plugin Template.
-Use this template to create your own FORENSIX plugins.
+HyperTraceX Community Contribution Plugin Template.
+Use this template to create your own HyperTraceX plugins.
 """
 
 from datetime import datetime
@@ -10,7 +10,7 @@ from typing import Dict, Any
 
 class ContribPlugin:
     """
-    Community Plugin Template for FORENSIX.
+    Community Plugin Template for HyperTraceX.
     
     To create your plugin:
     1. Copy this file
@@ -43,7 +43,7 @@ class ContribPlugin:
         Main plugin execution method.
         
         Args:
-            framework: FORENSIX ForensixEngine instance
+            framework: HyperTraceX ForensixEngine instance
             **kwargs: Additional arguments
         
         Returns:
@@ -125,8 +125,8 @@ class ContribPlugin:
 
 def register(plugin_manager):
     """
-    Register this plugin with FORENSIX framework.
+    Register this plugin with HyperTraceX framework.
     
-    This function is called automatically when FORENSIX loads plugins.
+    This function is called automatically when HyperTraceX loads plugins.
     """
     plugin_manager.register(ContribPlugin())

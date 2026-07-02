@@ -1,4 +1,4 @@
-# FORENSIX Network Forensics Modules
+# HyperTraceX Network Forensics Modules
 from .packet_analyzer import PacketAnalyzer
 from .dns_parser import DNSParser
 from .connection_scanner import ConnectionScanner

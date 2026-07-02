@@ -1,4 +1,4 @@
-# FORENSIX Native Module Compilation
+# HyperTraceX Native Module Compilation
 # Compiles C++ modules for high-performance forensic operations
 
 CXX = g++
@@ -65,7 +65,7 @@ install: all
 
 # Show help
 help:
-	@echo "FORENSIX Native Module Compilation"
+	@echo "HyperTraceX Native Module Compilation"
 	@echo "=================================="
 	@echo ""
 	@echo "Targets:"

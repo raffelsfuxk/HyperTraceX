@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Setup Script - Package installation."""
+"""HyperTraceX Setup Script - Package installation."""
 
 from setuptools import setup, find_packages
 import os
@@ -11,21 +11,21 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
 setup(
-    name="forensix",
+    name="tracex",
     version="1.0.0",
     author="raffelsfuxk",
-    author_email="forensix@example.com",
+    author_email="tracex@example.com",
     description="Enterprise Digital Forensics Platform",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/raffelsfuxk/FORENSIX",
+    url="https://github.com/raffelsfuxk/HyperTraceX",
     packages=find_packages(
         include=["core", "core.*", "modules", "modules.*", 
                  "ai", "ai.*", "enterprise", "enterprise.*",
                  "reporting", "reporting.*", "dashboard", "dashboard.*",
                  "cli", "cli.*", "plugins", "plugins.*"]
     ),
-    py_modules=["forensix"],
+    py_modules=["tracex"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Information Technology",
@@ -45,7 +45,7 @@ setup(
     install_requires=requirements,
     entry_points={
         "console_scripts": [
-            "forensix=forensix:main",
+            "tracex=tracex:main",
         ],
     },
     include_package_data=True,

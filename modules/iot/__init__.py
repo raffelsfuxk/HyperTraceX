@@ -1,4 +1,4 @@
-# FORENSIX IoT Forensics Modules
+# HyperTraceX IoT Forensics Modules
 from .iot_parser import IoTParser
 
 __all__ = ['IoTParser']

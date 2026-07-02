@@ -1,12 +1,12 @@
-# FORENSIX Docker Container
+# HyperTraceX Docker Container
 # Enterprise Digital Forensics Platform
-# docker build -t forensix .
-# docker run -it --privileged forensix
+# docker build -t tracex .
+# docker run -it --privileged tracex
 
 FROM kalilinux/kali-rolling:latest
 
 LABEL maintainer="CR0WNNE0_fuxv>#SUDOIT"
-LABEL description="FORENSIX - Enterprise Digital Forensics Platform"
+LABEL description="HyperTraceX - Enterprise Digital Forensics Platform"
 LABEL version="1.0.0"
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -33,17 +33,17 @@ RUN apt update && apt install -y \
     iproute2 \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /opt/forensix
+WORKDIR /opt/tracex
 
 COPY requirements.txt .
 RUN pip3 install --break-system-packages -r requirements.txt
 
 COPY . .
 
-RUN chmod +x forensix.py install.sh
-RUN ln -sf /opt/forensix/forensix.py /usr/local/bin/forensix
+RUN chmod +x tracex.py install.sh
+RUN ln -sf /opt/tracex/tracex.py /usr/local/bin/tracex
 
 VOLUME ["/cases", "/evidence", "/output"]
 
-ENTRYPOINT ["python3", "forensix.py"]
+ENTRYPOINT ["python3", "tracex.py"]
 CMD ["--help"]

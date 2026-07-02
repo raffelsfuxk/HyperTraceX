@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-FORENSIX - Enterprise Digital Forensics Platform
+HyperTraceX - Enterprise Digital Forensics Platform
 Main Entry Point
-Usage: sudo python3 forensix.py
+Usage: sudo python3 tracex.py
 """
 
 import sys
@@ -18,19 +18,19 @@ __version__ = "1.0.0"
 
 BANNER = """
     ╔══════════════════════════════════════════════════════════╗
-    ║     FORENSIX - Enterprise Digital Forensics Platform     ║
+    ║     HyperTraceX - Enterprise Digital Forensics Platform     ║
     ║     Version """ + __version__ + """  |  Ethical Use Only                    ║
     ╚══════════════════════════════════════════════════════════╝
 """
 
 def create_parser():
     parser = argparse.ArgumentParser(
-        description="FORENSIX - Digital Forensics Acquisition & Analysis Suite",
+        description="HyperTraceX - Digital Forensics Acquisition & Analysis Suite",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="EXAMPLES:\n  sudo forensix\n  sudo forensix scan-drives\n  sudo forensix status"
+        epilog="EXAMPLES:\n  sudo tracex\n  sudo tracex scan-drives\n  sudo tracex status"
     )
     
-    parser.add_argument("-v", "--version", action="version", version=f"FORENSIX v{__version__}")
+    parser.add_argument("-v", "--version", action="version", version=f"HyperTraceX v{__version__}")
     
     subparsers = parser.add_subparsers(dest="command", help="Command")
     

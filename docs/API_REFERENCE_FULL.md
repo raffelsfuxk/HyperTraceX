@@ -1,4 +1,4 @@
-# FORENSIX Complete API Reference
+# HyperTraceX Complete API Reference
 
 ## Base URL: http://localhost:5000/api
 
@@ -106,5 +106,5 @@ Response: {"cases": 5, "evidence_count": 200, "active_tasks": 2, "recent": [...]
 - Header: X-RateLimit-Remaining
 
 ## Support
-GitHub: https://github.com/raffelsfuxk/FORENSIX
+GitHub: https://github.com/raffelsfuxk/HyperTraceX
 Author: raffelsfuxk

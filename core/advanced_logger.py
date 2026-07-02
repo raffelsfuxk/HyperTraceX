@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Advanced Logger - Enterprise-grade logging with analytics."""
+"""HyperTraceX Advanced Logger - Enterprise-grade logging with analytics."""
 
 import os
 import sys
@@ -15,7 +15,7 @@ try:
     from core.logger import get_logger, setup_logging
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
     def setup_logging(*args, **kwargs):
         return get_logger()
@@ -62,7 +62,7 @@ class AdvancedLogger:
         with self._lock:
             self.metrics[event_type].append(event)
             
-            log_file = os.path.join(self.log_dir, f"forensix_{datetime.now():%Y%m%d}.jsonl")
+            log_file = os.path.join(self.log_dir, f"tracex_{datetime.now():%Y%m%d}.jsonl")
             with open(log_file, 'a') as f:
                 f.write(json.dumps(event) + '\n')
         

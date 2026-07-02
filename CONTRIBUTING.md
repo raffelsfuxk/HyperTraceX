@@ -1,6 +1,6 @@
-# Contributing to FORENSIX
+# Contributing to HyperTraceX
 
-Thank you for your interest in contributing to FORENSIX!
+Thank you for your interest in contributing to HyperTraceX!
 
 ## Code of Conduct
 
@@ -53,8 +53,8 @@ Thank you for your interest in contributing to FORENSIX!
 
 ## Development Setup
 
-git clone https://github.com/raffelsfuxk/FORENSIX.git
-cd FORENSIX
+git clone https://github.com/raffelsfuxk/HyperTraceX.git
+cd HyperTraceX
 sudo bash install.sh
 pip install -r requirements.txt --break-system-packages
 
@@ -74,6 +74,6 @@ See plugins/contrib_plugin.py for template and docs/WIKI.md for guide
 All contributors will be listed in CONTRIBUTORS.md and release notes.
 
 ## Questions?
-Open an issue or discussion on GitHub: https://github.com/raffelsfuxk/FORENSIX
+Open an issue or discussion on GitHub: https://github.com/raffelsfuxk/HyperTraceX
 
 Thank you for contributing to digital forensics!

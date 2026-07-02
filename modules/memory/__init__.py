@@ -1,4 +1,4 @@
-# FORENSIX Memory Forensics Modules
+# HyperTraceX Memory Forensics Modules
 from .volatility_wrapper import VolatilityWrapper
 from .memory_parser import MemoryParser
 

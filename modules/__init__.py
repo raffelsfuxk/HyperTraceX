@@ -1,4 +1,4 @@
-# FORENSIX Modules Package
+# HyperTraceX Modules Package
 from .acquisition import DiskImager, PartitionScanner, MemoryDumper
 from .artifacts import RegistryParser, BrowserForensics, EmailExtractor, WiFiExtractor
 from .analysis import FileCarver, MFTParser, TimelineGenerator, HashManager

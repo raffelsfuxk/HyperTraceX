@@ -1,4 +1,4 @@
-name: FORENSIX CI
+name: HyperTraceX CI
 
 on:
   push:

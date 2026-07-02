@@ -1,9 +1,9 @@
 #!/bin/bash
-# FORENSIX - Digital Forensics Platform Installer
+# HyperTraceX - Digital Forensics Platform Installer
 # Created by: raffelsfuxk
 
 echo "========================================="
-echo "  FORENSIX - Digital Forensics Platform"
+echo "  HyperTraceX - Digital Forensics Platform"
 echo "  Version 1.0.0"
 echo "========================================="
 echo ""
@@ -41,11 +41,11 @@ apt install -y \
     lime-forensics-dkms 2>/dev/null || echo "    LiME not available"
 
 echo "[*] Creating symlink..."
-chmod +x forensix.py
-ln -sf $(pwd)/forensix.py /usr/local/bin/forensix 2>/dev/null
+chmod +x tracex.py
+ln -sf $(pwd)/tracex.py /usr/local/bin/tracex 2>/dev/null
 
 echo ""
 echo "[+] Installation complete!"
-echo "    Run: sudo forensix"
-echo "    Or:  sudo python3 forensix.py"
+echo "    Run: sudo tracex"
+echo "    Or:  sudo python3 tracex.py"
 echo ""

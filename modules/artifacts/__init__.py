@@ -1,4 +1,4 @@
-# FORENSIX Artifact Collection Modules
+# HyperTraceX Artifact Collection Modules
 from .registry_parser import RegistryParser
 from .browser_forensics import BrowserForensics
 from .email_extractor import EmailExtractor

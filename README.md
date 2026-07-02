@@ -1,4 +1,4 @@
-# FORENSIX - Enterprise Digital Forensics Platform
+# HyperTraceX - Enterprise Digital Forensics Platform
 
 **Version:** 1.0.0  
 **Author:** raffelsfuxk  
@@ -8,7 +8,7 @@
 
 ## Description
 
-FORENSIX is a professional digital forensics acquisition and analysis platform designed for Kali Linux and Parrot OS. It provides comprehensive forensic tools for evidence collection, analysis, and reporting.
+HyperTraceX is a professional digital forensics acquisition and analysis platform designed for Kali Linux and Parrot OS. It provides comprehensive forensic tools for evidence collection, analysis, and reporting.
 
 ---
 
@@ -51,26 +51,26 @@ FORENSIX is a professional digital forensics acquisition and analysis platform d
 ## Quick Install
 
 ```bash
-git clone https://github.com/raffelsfuxk/FORENSIX.git && cd FORENSIX && sudo bash install.sh
+git clone https://github.com/raffelsfuxk/HyperTraceX.git && cd HyperTraceX && sudo bash install.sh
 
 Then run:
-sudo forensix
+sudo tracex
 
 Usage:
 # Interactive mode
-sudo forensix
+sudo tracex
 
 # Command mode
-sudo forensix case-create --id CASE001 --investigator "Name"
-sudo forensix scan-drives
-sudo forensix acquire --source /mnt/windows --dest ./output
-sudo forensix wifi --mount /mnt/windows
-sudo forensix browser --profile /mnt/windows/Users
-sudo forensix email --source mailbox.pst
-sudo forensix registry --hive SAM --type sam
-sudo forensix carve --source disk.img --output ./carved
-sudo forensix verify --file evidence.img --hash abc123
-sudo forensix report --format html --output report.html
+sudo tracex case-create --id CASE001 --investigator "Name"
+sudo tracex scan-drives
+sudo tracex acquire --source /mnt/windows --dest ./output
+sudo tracex wifi --mount /mnt/windows
+sudo tracex browser --profile /mnt/windows/Users
+sudo tracex email --source mailbox.pst
+sudo tracex registry --hive SAM --type sam
+sudo tracex carve --source disk.img --output ./carved
+sudo tracex verify --file evidence.img --hash abc123
+sudo tracex report --format html --output report.html
 
 Disclamer:
 FOR EDUCATIONAL AND AUTHORIZED USE ONLY!

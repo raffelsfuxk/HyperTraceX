@@ -1,4 +1,4 @@
-# FORENSIX API Reference
+# HyperTraceX API Reference
 
 ## Core Engine API
 
@@ -34,7 +34,7 @@ Database Manager API
 python
 from core.database import DatabaseManager
 
-db = DatabaseManager("forensix.db")
+db = DatabaseManager("tracex.db")
 
 # Cases
 case_pk = db.create_case("CASE001", "Investigator", "Org", "Description")
@@ -361,7 +361,7 @@ severe = detector.filter_by_severity(7)
 detector.display_report()
 detector.export_report("anomaly_report.json")
 Support
-GitHub: https://github.com/raffelsfuxk/FORENSIX
+GitHub: https://github.com/raffelsfuxk/HyperTraceX
 
 Author: raffelsfuxk
 

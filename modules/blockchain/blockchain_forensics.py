@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Blockchain Forensics - Cryptocurrency wallet and transaction analysis."""
+"""HyperTraceX Blockchain Forensics - Cryptocurrency wallet and transaction analysis."""
 
 import os
 import re
@@ -11,7 +11,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

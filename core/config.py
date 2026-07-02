@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Configuration Manager for FORENSIX Framework."""
+"""Configuration Manager for HyperTraceX Framework."""
 
 import json
 import os
@@ -15,7 +15,7 @@ DEFAULT_CONFIG = {
     },
     "storage": {
         "output_dir": "./output",
-        "temp_dir": "/tmp/forensix",
+        "temp_dir": "/tmp/tracex",
         "evidence_drive": "auto",
         "min_free_space_gb": 10
     },
@@ -29,7 +29,7 @@ DEFAULT_CONFIG = {
     },
     "logging": {
         "level": "INFO",
-        "file": "forensix.log",
+        "file": "tracex.log",
         "max_size_mb": 100,
         "backup_count": 5
     },

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Anomaly Detector - AI-powered anomaly detection for forensic analysis."""
+"""HyperTraceX Anomaly Detector - AI-powered anomaly detection for forensic analysis."""
 
 import os
 import json
@@ -12,7 +12,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

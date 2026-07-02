@@ -1,4 +1,4 @@
-# FORENSIX Core Package
+# HyperTraceX Core Package
 from .engine import ForensixEngine
 from .database import DatabaseManager
 from .config import ConfigManager

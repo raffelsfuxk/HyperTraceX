@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Error Handler - Global error management and recovery."""
+"""HyperTraceX Error Handler - Global error management and recovery."""
 
 import sys
 import traceback
@@ -10,13 +10,13 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 
 class ErrorHandler:
     """
-    Global Error Handler for FORENSIX Framework.
+    Global Error Handler for HyperTraceX Framework.
     
     Features:
         - Structured error logging
@@ -35,14 +35,14 @@ class ErrorHandler:
     }
     
     ERROR_CODES = {
-        "E001": {"message": "Root privileges required", "severity": "CRITICAL", "solution": "Run with: sudo forensix"},
+        "E001": {"message": "Root privileges required", "severity": "CRITICAL", "solution": "Run with: sudo tracex"},
         "E002": {"message": "Missing dependency", "severity": "CRITICAL", "solution": "Run: sudo bash install.sh"},
         "E003": {"message": "Source path not found", "severity": "ERROR", "solution": "Verify the source path exists"},
         "E004": {"message": "Destination not writable", "severity": "ERROR", "solution": "Check permissions on output directory"},
         "E005": {"message": "Hash mismatch detected", "severity": "ERROR", "solution": "Evidence may be compromised. Re-acquire."},
         "E006": {"message": "Mount operation failed", "severity": "ERROR", "solution": "Check filesystem type and permissions"},
         "E007": {"message": "Python module missing", "severity": "ERROR", "solution": "Run: pip install -r requirements.txt"},
-        "E008": {"message": "Database locked", "severity": "WARNING", "solution": "Close other FORENSIX instances"},
+        "E008": {"message": "Database locked", "severity": "WARNING", "solution": "Close other HyperTraceX instances"},
         "E009": {"message": "Plugin load failed", "severity": "WARNING", "solution": "Check plugin syntax and dependencies"},
         "E010": {"message": "API server error", "severity": "ERROR", "solution": "Check port availability"},
         "E011": {"message": "Memory allocation failed", "severity": "CRITICAL", "solution": "Free memory or reduce batch size"},

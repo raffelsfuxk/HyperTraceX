@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Unit Tests - Core Module Tests."""
+"""HyperTraceX Unit Tests - Core Module Tests."""
 
 import os
 import sys
@@ -219,7 +219,7 @@ class TestUtilityFunctions(unittest.TestCase):
     
     def test_hash_calculation(self):
         """Test hash calculation."""
-        test_content = b"FORENSIX Test Data"
+        test_content = b"HyperTraceX Test Data"
         expected_md5 = hashlib.md5(test_content).hexdigest()
         expected_sha256 = hashlib.sha256(test_content).hexdigest()
         

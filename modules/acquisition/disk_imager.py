@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Disk Imager - Raw disk imaging with hash verification."""
+"""HyperTraceX Disk Imager - Raw disk imaging with hash verification."""
 
 import os
 import time
@@ -12,7 +12,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

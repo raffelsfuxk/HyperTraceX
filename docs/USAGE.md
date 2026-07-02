@@ -1,4 +1,4 @@
-# FORENSIX Usage Guide
+# HyperTraceX Usage Guide
 
 ## Table of Contents
 1. Quick Start
@@ -16,21 +16,21 @@
 ## Quick Start
 
 ### Installation
-git clone https://github.com/raffelsfuxk/FORENSIX.git && cd FORENSIX && sudo bash install.sh
+git clone https://github.com/raffelsfuxk/HyperTraceX.git && cd HyperTraceX && sudo bash install.sh
 
 ### First Run
-sudo forensix
+sudo tracex
 
 ### Command Help
-sudo forensix --help
-sudo forensix [command] --help
+sudo tracex --help
+sudo tracex [command] --help
 
 ---
 
 ## Case Management
 
 ### Create New Case
-sudo forensix case-create --id CASE001 --investigator "John Doe" --org "Security Corp" --desc "Investigation"
+sudo tracex case-create --id CASE001 --investigator "John Doe" --org "Security Corp" --desc "Investigation"
 
 ### View All Cases
 Interactive menu > View Case Status
@@ -43,55 +43,55 @@ Interactive menu > Close Case
 ## Evidence Acquisition
 
 ### Scan Drives
-sudo forensix scan-drives
+sudo tracex scan-drives
 
 ### Acquire Files
-sudo forensix acquire --source /mnt/windows --dest ./evidence
-sudo forensix acquire --source /mnt/windows --dest ./evidence --ext pdf,docx,xlsx,jpg
+sudo tracex acquire --source /mnt/windows --dest ./evidence
+sudo tracex acquire --source /mnt/windows --dest ./evidence --ext pdf,docx,xlsx,jpg
 
 ### Create Forensic Image
-sudo forensix image --device /dev/sda1 --output ./case001.img
+sudo tracex image --device /dev/sda1 --output ./case001.img
 
 ### Memory Dump
-sudo forensix memory --output ./memdump.raw --method lime
-sudo forensix memory --output ./memdump.raw --method proc
-sudo forensix memory --output ./memdump.raw --method devmem
+sudo tracex memory --output ./memdump.raw --method lime
+sudo tracex memory --output ./memdump.raw --method proc
+sudo tracex memory --output ./memdump.raw --method devmem
 
 ---
 
 ## Artifact Extraction
 
 ### Windows Registry
-sudo forensix registry --hive SAM --type sam
-sudo forensix registry --hive SYSTEM --type system
-sudo forensix registry --hive SOFTWARE --type all
+sudo tracex registry --hive SAM --type sam
+sudo tracex registry --hive SYSTEM --type system
+sudo tracex registry --hive SOFTWARE --type all
 
 ### Browser Forensics
-sudo forensix browser --profile /mnt/Windows/Users
-sudo forensix browser --profile /mnt/Windows/Users --browsers chrome,firefox,edge
+sudo tracex browser --profile /mnt/Windows/Users
+sudo tracex browser --profile /mnt/Windows/Users --browsers chrome,firefox,edge
 
 ### Email Extraction
-sudo forensix email --source mailbox.pst --type pst
-sudo forensix email --source inbox.mbox --type mbox
+sudo tracex email --source mailbox.pst --type pst
+sudo tracex email --source inbox.mbox --type mbox
 
 ### WiFi Passwords
-sudo forensix wifi --mount /mnt/windows
+sudo tracex wifi --mount /mnt/windows
 
 ---
 
 ## Analysis Tools
 
 ### File Carving
-sudo forensix carve --source disk.img --output ./carved
-sudo forensix carve --source disk.img --output ./carved --types jpg,png,pdf,docx
+sudo tracex carve --source disk.img --output ./carved
+sudo tracex carve --source disk.img --output ./carved --types jpg,png,pdf,docx
 
 ### Hash Verification
-sudo forensix verify --file evidence.txt --hash abc123def456 --algo sha256
-sudo forensix verify --file evidence.txt --hash abc123 --algo md5
-sudo forensix verify --file evidence.txt --hash abc123 --algo sha1
+sudo tracex verify --file evidence.txt --hash abc123def456 --algo sha256
+sudo tracex verify --file evidence.txt --hash abc123 --algo md5
+sudo tracex verify --file evidence.txt --hash abc123 --algo sha1
 
 ### Hash Lookup
-sudo forensix hash-lookup --hash abc123def456
+sudo tracex hash-lookup --hash abc123def456
 
 ### Signature Analysis
 Python API:
@@ -112,10 +112,10 @@ tl.display_timeline()
 ## Reporting
 
 ### HTML Report
-sudo forensix report --format html --output investigation_report.html
+sudo tracex report --format html --output investigation_report.html
 
 ### JSON Report
-sudo forensix report --format json --output investigation_report.json
+sudo tracex report --format json --output investigation_report.json
 
 ### PDF Report
 Python API:
@@ -156,7 +156,7 @@ api = APIServer(engine, host="0.0.0.0", port=5000)
 api.start()
 
 ### Web Dashboard
-sudo forensix dashboard
+sudo tracex dashboard
 Open: http://127.0.0.1:8888
 
 ---
@@ -190,9 +190,9 @@ Interactive menu > Load Plugins > Enter plugin directory
 
 | Issue | Solution |
 |-------|----------|
-| Permission denied | sudo forensix |
+| Permission denied | sudo tracex |
 | Missing dependencies | sudo bash install.sh |
-| Database locked | pkill -f forensix && rm -f forensix.db-journal |
+| Database locked | pkill -f tracex && rm -f tracex.db-journal |
 | Native module error | cd native && make clean && make all && make install |
 | Flask not found | pip3 install flask flask-socketio --break-system-packages |
 | fpdf not found | pip3 install fpdf --break-system-packages |
@@ -204,8 +204,8 @@ Interactive menu > Load Plugins > Enter plugin directory
 
 ## Support
 
-GitHub: https://github.com/raffelsfuxk/FORENSIX
-GitHub Issues: https://github.com/raffelsfuxk/FORENSIX/issues
+GitHub: https://github.com/raffelsfuxk/HyperTraceX
+GitHub Issues: https://github.com/raffelsfuxk/HyperTraceX/issues
 Author: raffelsfuxk
 License: MIT
 Copyright (c) 2024 raffelsfuxk - Ethical Hacker Lab

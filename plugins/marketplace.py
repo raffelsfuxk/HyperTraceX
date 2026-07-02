@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Plugin Marketplace - Download and manage community plugins."""
+"""HyperTraceX Plugin Marketplace - Download and manage community plugins."""
 
 import os
 import json
@@ -12,13 +12,13 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 
 class PluginMarketplace:
     """
-    FORENSIX Plugin Marketplace.
+    HyperTraceX Plugin Marketplace.
     
     Features:
         - Plugin discovery
@@ -173,12 +173,12 @@ class PluginMarketplace:
         # Create plugin stub
         plugin_file = os.path.join(plugin_path, "__init__.py")
         with open(plugin_file, 'w') as f:
-            f.write(f'''"""FORENSIX Plugin: {plugin_info["name"]}"""
+            f.write(f'''"""HyperTraceX Plugin: {plugin_info["name"]}"""
 __version__ = "{plugin_info["version"]}"
 __author__ = "{plugin_info["author"]}"
 
 def register(plugin_manager):
-    """Register plugin with FORENSIX framework."""
+    """Register plugin with HyperTraceX framework."""
     print("[+] {plugin_info["name"]} plugin loaded")
 ''')
         

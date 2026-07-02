@@ -25,7 +25,7 @@
     },
     "storage": {
         "output_dir": "./output",
-        "temp_dir": "/tmp/forensix",
+        "temp_dir": "/tmp/tracex",
         "evidence_dir": "./evidence",
         "backup_dir": "./backups",
         "max_file_size_gb": 10,
@@ -47,7 +47,7 @@
     },
     "plugins": {
         "auto_update": true,
-        "marketplace_url": "https://plugins.forensix.dev",
+        "marketplace_url": "https://plugins.tracex.dev",
         "allow_unsigned": false,
         "sandbox_mode": true
     },

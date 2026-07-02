@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Timeline Generator - Build forensic timelines from file system metadata."""
+"""HyperTraceX Timeline Generator - Build forensic timelines from file system metadata."""
 
 import os
 import time
@@ -10,7 +10,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

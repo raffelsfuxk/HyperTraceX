@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Mobile Live Acquisition - Real-time mobile device data extraction."""
+"""HyperTraceX Mobile Live Acquisition - Real-time mobile device data extraction."""
 
 import os
 import re
@@ -13,7 +13,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 
@@ -95,7 +95,7 @@ class MobileLiveAcquisition:
     def acquire_android(self, serial: str = None, output_dir: str = None) -> Dict:
         """Acquire data from Android device via ADB."""
         if not output_dir:
-            output_dir = tempfile.mkdtemp(prefix="forensix_android_")
+            output_dir = tempfile.mkdtemp(prefix="tracex_android_")
         
         os.makedirs(output_dir, exist_ok=True)
         
@@ -212,11 +212,11 @@ class MobileLiveAcquisition:
         try:
             screenshot_path = os.path.join(output_dir, "screenshot.png")
             subprocess.run(
-                adb_prefix + ["shell", "screencap", "-p", "/sdcard/forensix_screenshot.png"],
+                adb_prefix + ["shell", "screencap", "-p", "/sdcard/tracex_screenshot.png"],
                 capture_output=True, timeout=10
             )
             subprocess.run(
-                adb_prefix + ["pull", "/sdcard/forensix_screenshot.png", screenshot_path],
+                adb_prefix + ["pull", "/sdcard/tracex_screenshot.png", screenshot_path],
                 capture_output=True, timeout=10
             )
             
@@ -255,7 +255,7 @@ class MobileLiveAcquisition:
     def acquire_ios(self, serial: str = None, output_dir: str = None) -> Dict:
         """Acquire data from iOS device via libimobiledevice."""
         if not output_dir:
-            output_dir = tempfile.mkdtemp(prefix="forensix_ios_")
+            output_dir = tempfile.mkdtemp(prefix="tracex_ios_")
         
         os.makedirs(output_dir, exist_ok=True)
         
@@ -339,7 +339,7 @@ class MobileLiveAcquisition:
     def acquire_all(self, output_dir: str = None) -> Dict[str, Dict]:
         """Acquire data from all connected devices."""
         if not output_dir:
-            output_dir = tempfile.mkdtemp(prefix="forensix_mobile_")
+            output_dir = tempfile.mkdtemp(prefix="tracex_mobile_")
         
         devices = self.scan_devices()
         results = {}

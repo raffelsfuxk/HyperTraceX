@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Partition Scanner - Detect and analyze storage partitions."""
+"""HyperTraceX Partition Scanner - Detect and analyze storage partitions."""
 
 import os
 import subprocess
@@ -9,7 +9,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Memory Dumper - RAM acquisition and analysis support."""
+"""HyperTraceX Memory Dumper - RAM acquisition and analysis support."""
 
 import os
 import time
@@ -11,7 +11,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

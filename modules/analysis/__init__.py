@@ -1,4 +1,4 @@
-# FORENSIX Analysis Modules
+# HyperTraceX Analysis Modules
 from .file_carver import FileCarver
 from .mft_parser import MFTParser
 from .timeline_generator import TimelineGenerator

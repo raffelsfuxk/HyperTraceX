@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Performance Tests - Benchmarking and load testing."""
+"""HyperTraceX Performance Tests - Benchmarking and load testing."""
 
 import os
 import sys

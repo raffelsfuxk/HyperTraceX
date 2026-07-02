@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Email Extractor - Extract emails from Outlook PST and Thunderbird MBOX."""
+"""HyperTraceX Email Extractor - Extract emails from Outlook PST and Thunderbird MBOX."""
 
 import os
 import re
@@ -14,7 +14,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

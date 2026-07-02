@@ -1,4 +1,4 @@
-# FORENSIX Changelog
+# HyperTraceX Changelog
 
 ## v1.0.0 (2024-06-10) - Initial Release
 

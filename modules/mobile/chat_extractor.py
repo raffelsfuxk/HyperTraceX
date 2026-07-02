@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Chat Extractor - Extract messages from WhatsApp, Telegram, Signal, Discord, Slack."""
+"""HyperTraceX Chat Extractor - Extract messages from WhatsApp, Telegram, Signal, Discord, Slack."""
 
 import os
 import re
@@ -12,7 +12,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Integration Tests - End-to-end workflow testing."""
+"""HyperTraceX Integration Tests - End-to-end workflow testing."""
 
 import os
 import sys
@@ -251,7 +251,7 @@ class TestHashOperations(unittest.TestCase):
         from core.engine import ForensixEngine
         engine = ForensixEngine()
         
-        test_data = b"FORENSIX Integration Test Data"
+        test_data = b"HyperTraceX Integration Test Data"
         
         with tempfile.NamedTemporaryFile(delete=False) as f:
             f.write(test_data)

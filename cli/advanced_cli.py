@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Advanced CLI - Interactive command-line interface with auto-complete."""
+"""HyperTraceX Advanced CLI - Interactive command-line interface with auto-complete."""
 
 import os
 import sys
@@ -19,7 +19,7 @@ except ImportError:
 
 class AdvancedCLI(cmd.Cmd):
     """
-    FORENSIX Advanced Command-Line Interface.
+    HyperTraceX Advanced Command-Line Interface.
     
     Features:
         - Tab auto-complete
@@ -32,18 +32,18 @@ class AdvancedCLI(cmd.Cmd):
     
     intro = """
     ╔══════════════════════════════════════════════════════════╗
-    ║     FORENSIX Interactive Console v1.0.0                  ║
+    ║     HyperTraceX Interactive Console v1.0.0                  ║
     ║     Type 'help' for available commands                   ║
     ║     Type 'exit' to quit                                 ║
     ╚══════════════════════════════════════════════════════════╝
     """
-    prompt = "FORENSIX> "
+    prompt = "HyperTraceX> "
     
     def __init__(self, engine=None):
         super().__init__()
         self.engine = engine
         self.current_case = None
-        self.history_file = os.path.expanduser("~/.forensix_history")
+        self.history_file = os.path.expanduser("~/.tracex_history")
         self._load_history()
     
     def _load_history(self):
@@ -238,7 +238,7 @@ class AdvancedCLI(cmd.Cmd):
         if self.engine:
             self.engine.display_status()
         else:
-            print(f"[*] FORENSIX v1.0.0")
+            print(f"[*] HyperTraceX v1.0.0")
             print(f"    Active Case: {self.current_case or 'None'}")
     
     def do_clear(self, arg):
@@ -260,13 +260,13 @@ class AdvancedCLI(cmd.Cmd):
             print("[!] readline not available")
     
     def do_exit(self, arg):
-        """Exit FORENSIX console"""
+        """Exit HyperTraceX console"""
         self._save_history()
         print("[*] Goodbye!")
         return True
     
     def do_quit(self, arg):
-        """Exit FORENSIX console"""
+        """Exit HyperTraceX console"""
         return self.do_exit(arg)
     
     # Shortcuts

@@ -1,17 +1,17 @@
-# FORENSIX Wiki - Complete Documentation
+# HyperTraceX Wiki - Complete Documentation
 
 ## Overview
-FORENSIX is an enterprise-grade digital forensics platform for forensic investigators, incident responders, and security professionals. Features include multi-platform acquisition, AI-powered analysis, enterprise multi-user support, chain of custody, REST API, plugin marketplace, and web dashboard.
+HyperTraceX is an enterprise-grade digital forensics platform for forensic investigators, incident responders, and security professionals. Features include multi-platform acquisition, AI-powered analysis, enterprise multi-user support, chain of custody, REST API, plugin marketplace, and web dashboard.
 
 ## System Requirements
 - Kali Linux / Parrot OS / Debian-based Linux
 - Python 3.9+, 4GB RAM minimum (8GB recommended), 10GB free disk space
 
 ## Quick Install
-git clone https://github.com/raffelsfuxk/FORENSIX.git && cd FORENSIX && sudo bash install.sh && sudo forensix
+git clone https://github.com/raffelsfuxk/HyperTraceX.git && cd HyperTraceX && sudo bash install.sh && sudo tracex
 
 ## Architecture
-FORENSIX follows a modular architecture: core engine, acquisition modules, artifact extraction, analysis tools, AI/ML, enterprise features, reporting, dashboard, GUI, CLI, native C++ modules, plugins, and comprehensive tests.
+HyperTraceX follows a modular architecture: core engine, acquisition modules, artifact extraction, analysis tools, AI/ML, enterprise features, reporting, dashboard, GUI, CLI, native C++ modules, plugins, and comprehensive tests.
 
 ## Module Reference
 
@@ -36,11 +36,11 @@ Q: Windows? A: Use WSL2 or VM
 Q: Create plugin? A: Copy plugins/contrib_plugin.py
 Q: Report bug? A: GitHub Issues
 Q: Court-admissible? A: Includes chain of custody, follow local laws
-Q: Docker? A: docker build -t forensix . && docker run -it --privileged forensix
+Q: Docker? A: docker build -t tracex . && docker run -it --privileged tracex
 Q: Update? A: git pull && sudo bash install.sh
 
 ## Support
-GitHub Issues: https://github.com/raffelsfuxk/FORENSIX/issues
+GitHub Issues: https://github.com/raffelsfuxk/HyperTraceX/issues
 Author: raffelsfuxk
 License: MIT
 Version: 1.0.0

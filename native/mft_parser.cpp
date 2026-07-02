@@ -1,5 +1,5 @@
 /**
- * FORENSIX MFT Parser (C++ Native Module)
+ * HyperTraceX MFT Parser (C++ Native Module)
  * High-performance NTFS Master File Table parser for deleted file recovery.
  * 
  * Compile: g++ -O3 -shared -fPIC -o mft_parser.so mft_parser.cpp

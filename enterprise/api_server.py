@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX REST API Server - Programmatic access for external integrations."""
+"""HyperTraceX REST API Server - Programmatic access for external integrations."""
 
 import json
 from datetime import datetime
@@ -9,7 +9,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 try:
@@ -21,7 +21,7 @@ except ImportError:
 
 class APIServer:
     """
-    FORENSIX REST API Server.
+    HyperTraceX REST API Server.
     
     Provides programmatic access to forensic capabilities:
         - Case management
@@ -52,7 +52,7 @@ class APIServer:
         self.app = Flask(__name__)
         self._register_routes()
         
-        print(f"\n[*] Starting FORENSIX API Server")
+        print(f"\n[*] Starting HyperTraceX API Server")
         print(f"    URL: http://{self.host}:{self.port}")
         print(f"    Docs: http://{self.host}:{self.port}/api")
         print(f"    Press Ctrl+C to stop\n")
@@ -72,7 +72,7 @@ class APIServer:
         @self.app.route('/api', methods=['GET'])
         def api_index():
             return jsonify({
-                "service": "FORENSIX API",
+                "service": "HyperTraceX API",
                 "version": "1.0.0",
                 "endpoints": {
                     "GET /api": "API documentation",

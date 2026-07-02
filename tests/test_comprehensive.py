@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Comprehensive Unit Tests - Testing all modules thoroughly."""
+"""HyperTraceX Comprehensive Unit Tests - Testing all modules thoroughly."""
 
 import os
 import sys
@@ -125,7 +125,7 @@ class TestHashManager(unittest.TestCase):
     
     def test_hash_calculation(self):
         with tempfile.NamedTemporaryFile(delete=False) as f:
-            f.write(b"FORENSIX Hash Test Data")
+            f.write(b"HyperTraceX Hash Test Data")
             temp_path = f.name
         
         try:

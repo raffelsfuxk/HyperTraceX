@@ -1,5 +1,5 @@
 /**
- * FORENSIX Raw Disk Reader (C++ Native Module)
+ * HyperTraceX Raw Disk Reader (C++ Native Module)
  * High-performance raw disk sector reader for forensic imaging.
  * 
  * Compile: g++ -O3 -shared -fPIC -o raw_reader.so raw_reader.cpp

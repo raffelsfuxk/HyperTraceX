@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Web GUI - Advanced web-based forensic management interface."""
+"""HyperTraceX Web GUI - Advanced web-based forensic management interface."""
 
 import os
 import sys
@@ -26,7 +26,7 @@ except ImportError:
 
 class WebApp:
     """
-    FORENSIX Advanced Web Interface.
+    HyperTraceX Advanced Web Interface.
     
     Features:
         - Real-time case dashboard
@@ -43,7 +43,7 @@ class WebApp:
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FORENSIX Web Console</title>
+        <title>HyperTraceX Web Console</title>
         <style>
             :root {
                 --bg: #0a0a0a;
@@ -261,7 +261,7 @@ class WebApp:
         <div class="app-container">
             <div class="sidebar">
                 <div class="sidebar-header">
-                    <h2>FORENSIX</h2>
+                    <h2>HyperTraceX</h2>
                     <p style="color:var(--muted);font-size:0.8em;">Web Console v1.0</p>
                 </div>
                 <div class="sidebar-nav">
@@ -317,7 +317,7 @@ class WebApp:
                 </div>
                 
                 <div class="footer">
-                    FORENSIX v1.0.0 | raffelsfuxk | MIT License
+                    HyperTraceX v1.0.0 | raffelsfuxk | MIT License
                 </div>
             </div>
         </div>
@@ -327,7 +327,7 @@ class WebApp:
             const socket = io();
             
             socket.on('connect', () => {
-                console.log('Connected to FORENSIX Web Console');
+                console.log('Connected to HyperTraceX Web Console');
             });
             
             socket.on('update', (data) => {
@@ -415,7 +415,7 @@ class WebApp:
         thread = threading.Thread(target=emit_loop, daemon=True)
         thread.start()
         
-        print(f"\n[*] FORENSIX Web Console started")
+        print(f"\n[*] HyperTraceX Web Console started")
         print(f"    URL: http://{self.host}:{self.port}")
         
         self.socketio.run(self.app, host=self.host, port=self.port, 

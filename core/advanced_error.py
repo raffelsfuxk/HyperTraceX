@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Advanced Error Handler - Enhanced error recovery and fault tolerance."""
+"""HyperTraceX Advanced Error Handler - Enhanced error recovery and fault tolerance."""
 
 import os
 import sys
@@ -15,7 +15,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 
@@ -162,7 +162,7 @@ class AdvancedErrorHandler:
     
     def _check_filesystem(self) -> Dict:
         try:
-            test_file = "/tmp/forensix_health_check"
+            test_file = "/tmp/tracex_health_check"
             with open(test_file, 'w') as f:
                 f.write("test")
             os.remove(test_file)

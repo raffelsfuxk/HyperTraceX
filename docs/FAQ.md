@@ -1,43 +1,43 @@
-# FORENSIX Frequently Asked Questions
+# HyperTraceX Frequently Asked Questions
 
 ## General
 
-**Q: What is FORENSIX?**
-A: FORENSIX is an enterprise-grade digital forensics platform for forensic acquisition, analysis, and reporting. It supports Windows, Linux, Mac, mobile, cloud, IoT, drone, vehicle, and SCADA forensics.
+**Q: What is HyperTraceX?**
+A: HyperTraceX is an enterprise-grade digital forensics platform for forensic acquisition, analysis, and reporting. It supports Windows, Linux, Mac, mobile, cloud, IoT, drone, vehicle, and SCADA forensics.
 
-**Q: Who created FORENSIX?**
+**Q: Who created HyperTraceX?**
 A: raffelsfuxk - Ethical Hacker Lab
 
-**Q: Is FORENSIX free?**
-A: Yes! FORENSIX is open-source under MIT License.
+**Q: Is HyperTraceX free?**
+A: Yes! HyperTraceX is open-source under MIT License.
 
 ## Installation
 
 **Q: How to install?**
-A: git clone https://github.com/raffelsfuxk/FORENSIX.git && cd FORENSIX && sudo bash install.sh
+A: git clone https://github.com/raffelsfuxk/HyperTraceX.git && cd HyperTraceX && sudo bash install.sh
 
 **Q: Requirements?**
 A: Kali/Parrot/Debian Linux, Python 3.9+, 4GB RAM, 10GB disk
 
 **Q: Docker support?**
-A: Yes! docker build -t forensix . && docker run -it --privileged forensix
+A: Yes! docker build -t tracex . && docker run -it --privileged tracex
 
 ## Usage
 
 **Q: How to start?**
-A: sudo forensix or sudo python3 forensix.py
+A: sudo tracex or sudo python3 tracex.py
 
 **Q: How to scan drives?**
-A: sudo forensix scan-drives
+A: sudo tracex scan-drives
 
 **Q: How to extract browser data?**
-A: sudo forensix browser --profile /mnt/Windows/Users
+A: sudo tracex browser --profile /mnt/Windows/Users
 
 **Q: How to crack WiFi passwords?**
-A: sudo forensix wifi --mount /mnt/windows
+A: sudo tracex wifi --mount /mnt/windows
 
 **Q: How to generate report?**
-A: sudo forensix report --format html --output report.html
+A: sudo tracex report --format html --output report.html
 
 ## Features
 
@@ -59,13 +59,13 @@ A: Yes! See plugins/contrib_plugin.py for template
 ## Troubleshooting
 
 **Q: Permission denied?**
-A: Run with sudo. FORENSIX requires root for disk access.
+A: Run with sudo. HyperTraceX requires root for disk access.
 
 **Q: Module not found?**
 A: Run sudo bash install.sh to install all dependencies.
 
 **Q: Database locked?**
-A: pkill -f forensix && rm -f forensix.db-journal
+A: pkill -f tracex && rm -f tracex.db-journal
 
 **Q: Flask not found?**
 A: pip3 install flask flask-socketio --break-system-packages
@@ -75,14 +75,14 @@ A: cd native && make clean && make all && make install
 
 ## Legal
 
-**Q: Is FORENSIX court-admissible?**
-A: FORENSIX includes chain of custody and integrity verification. Follow local legal procedures.
+**Q: Is HyperTraceX court-admissible?**
+A: HyperTraceX includes chain of custody and integrity verification. Follow local legal procedures.
 
 **Q: Can I use this for unauthorized access?**
-A: NO! FORENSIX is for authorized forensic investigations only. Unauthorized use is illegal.
+A: NO! HyperTraceX is for authorized forensic investigations only. Unauthorized use is illegal.
 
 ## Support
 
-GitHub: https://github.com/raffelsfuxk/FORENSIX
-Issues: https://github.com/raffelsfuxk/FORENSIX/issues
+GitHub: https://github.com/raffelsfuxk/HyperTraceX
+Issues: https://github.com/raffelsfuxk/HyperTraceX/issues
 Author: raffelsfuxk

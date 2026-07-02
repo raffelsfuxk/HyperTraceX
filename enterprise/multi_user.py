@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Multi-User Access Control - Role-based access management."""
+"""HyperTraceX Multi-User Access Control - Role-based access management."""
 
 import os
 import hashlib
@@ -11,7 +11,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 
@@ -76,7 +76,7 @@ class MultiUserManager:
     
     def _create_default_admin(self):
         """Create default admin account."""
-        default_password = self._hash_password("forensix_admin")
+        default_password = self._hash_password("tracex_admin")
         self.users["admin"] = {
             "username": "admin",
             "password_hash": default_password,
@@ -88,12 +88,12 @@ class MultiUserManager:
             "active": True
         }
         self._save_users()
-        print("[!] Default admin created: admin / forensix_admin")
+        print("[!] Default admin created: admin / tracex_admin")
         print("    Please change password after first login!")
     
     def _hash_password(self, password: str) -> str:
         """Hash password with SHA256 + salt."""
-        salt = "FORENSIX_SALT_2024"
+        salt = "HyperTraceX_SALT_2024"
         return hashlib.sha256(f"{salt}{password}{salt}".encode()).hexdigest()
     
     def create_user(self, username: str, password: str, role: str,

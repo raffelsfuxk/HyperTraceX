@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX Desktop GUI - Professional forensic analysis interface."""
+"""HyperTraceX Desktop GUI - Professional forensic analysis interface."""
 
 import os
 import sys
@@ -24,7 +24,7 @@ except ImportError:
 
 class MainWindow:
     """
-    FORENSIX Desktop GUI Application.
+    HyperTraceX Desktop GUI Application.
     
     Provides a professional graphical interface for:
         - Case management
@@ -41,7 +41,7 @@ class MainWindow:
         
         self.engine = engine
         self.root = tk.Tk()
-        self.root.title("FORENSIX - Digital Forensics Platform")
+        self.root.title("HyperTraceX - Digital Forensics Platform")
         self.root.geometry("1200x700")
         self.root.configure(bg="#1a1a2e")
         
@@ -93,7 +93,7 @@ class MainWindow:
         
         title_label = ttk.Label(
             header_frame,
-            text="FORENSIX - Enterprise Digital Forensics Platform",
+            text="HyperTraceX - Enterprise Digital Forensics Platform",
             font=("Consolas", 16, "bold")
         )
         title_label.pack(side=tk.LEFT)
@@ -269,7 +269,7 @@ class MainWindow:
         )
         self.log_text.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
         
-        self.log_text.insert(tk.END, f"[{datetime.now():%Y-%m-%d %H:%M:%S}] FORENSIX GUI started\n")
+        self.log_text.insert(tk.END, f"[{datetime.now():%Y-%m-%d %H:%M:%S}] HyperTraceX GUI started\n")
         self.log_text.insert(tk.END, f"[{datetime.now():%Y-%m-%d %H:%M:%S}] Ready for forensic operations\n")
         self.log_text.see(tk.END)
     
@@ -389,12 +389,12 @@ class MainWindow:
     def _on_about(self):
         """Show about dialog."""
         messagebox.showinfo(
-            "About FORENSIX",
-            "FORENSIX v1.0.0\n"
+            "About HyperTraceX",
+            "HyperTraceX v1.0.0\n"
             "Enterprise Digital Forensics Platform\n\n"
             "Author: raffelsfuxk\n"
             "License: MIT\n"
-            "GitHub: https://github.com/raffelsfuxk/FORENSIX"
+            "GitHub: https://github.com/raffelsfuxk/HyperTraceX"
         )
     
     def run(self):
@@ -403,7 +403,7 @@ class MainWindow:
             print("[!] tkinter not available. Install: sudo apt install python3-tk")
             return
         
-        self.log("FORENSIX GUI starting...")
+        self.log("HyperTraceX GUI starting...")
         self.root.mainloop()
 
 

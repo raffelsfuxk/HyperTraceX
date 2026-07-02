@@ -1,4 +1,4 @@
-# FORENSIX Blockchain Forensics Modules
+# HyperTraceX Blockchain Forensics Modules
 from .crypto_scanner import CryptoScanner
 from .wallet_extractor import WalletExtractor
 

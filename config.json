@@ -8,7 +8,7 @@
     },
     "storage": {
         "output_dir": "./output",
-        "temp_dir": "/tmp/forensix",
+        "temp_dir": "/tmp/tracex",
         "evidence_drive": "auto",
         "min_free_space_gb": 10
     },
@@ -20,7 +20,7 @@
     },
     "logging": {
         "level": "INFO",
-        "file": "forensix.log",
+        "file": "tracex.log",
         "max_size_mb": 100
     },
     "chain_of_custody": {

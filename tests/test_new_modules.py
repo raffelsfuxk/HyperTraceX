@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX New Module Tests - Testing newly added forensic modules."""
+"""HyperTraceX New Module Tests - Testing newly added forensic modules."""
 
 import os
 import sys

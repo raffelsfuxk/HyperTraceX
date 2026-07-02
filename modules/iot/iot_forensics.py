@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FORENSIX IoT Forensics - Analyze Internet of Things device artifacts."""
+"""HyperTraceX IoT Forensics - Analyze Internet of Things device artifacts."""
 
 import os
 import re
@@ -12,7 +12,7 @@ try:
     from core.logger import get_logger
 except ImportError:
     import logging
-    def get_logger(name="FORENSIX"):
+    def get_logger(name="HyperTraceX"):
         return logging.getLogger(name)
 
 

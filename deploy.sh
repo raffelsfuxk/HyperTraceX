@@ -1,11 +1,11 @@
 #!/bin/bash
-# FORENSIX Deployment Script
-# Deploy FORENSIX to production environment
+# HyperTraceX Deployment Script
+# Deploy HyperTraceX to production environment
 
 set -e
 
 echo "========================================="
-echo "  FORENSIX Deployment Script v1.0.0"
+echo "  HyperTraceX Deployment Script v1.0.0"
 echo "========================================="
 echo ""
 
@@ -19,7 +19,7 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-echo -e "${GREEN}[*] Starting FORENSIX deployment...${NC}"
+echo -e "${GREEN}[*] Starting HyperTraceX deployment...${NC}"
 
 # 1. Update system
 echo "[*] Step 1/8: Updating system packages..."
@@ -59,22 +59,22 @@ fi
 
 # 7. Setup symlinks
 echo "[*] Step 7/8: Setting up symlinks..."
-chmod +x forensix.py
-ln -sf $(pwd)/forensix.py /usr/local/bin/forensix
+chmod +x tracex.py
+ln -sf $(pwd)/tracex.py /usr/local/bin/tracex
 chmod +x deploy.sh
 
 # 8. Create directories
 echo "[*] Step 8/8: Creating working directories..."
-mkdir -p /var/lib/forensix/{cases,evidence,output,logs,plugins}
-chmod 755 /var/lib/forensix
+mkdir -p /var/lib/tracex/{cases,evidence,output,logs,plugins}
+chmod 755 /var/lib/tracex
 
 echo ""
 echo -e "${GREEN}[+] Deployment complete!${NC}"
 echo ""
-echo "  Run: sudo forensix"
-echo "  Web: sudo forensix dashboard"
-echo "  API: sudo forensix api"
+echo "  Run: sudo tracex"
+echo "  Web: sudo tracex dashboard"
+echo "  API: sudo tracex api"
 echo ""
-echo "  Configuration: /var/lib/forensix/"
-echo "  Logs: /var/lib/forensix/logs/"
+echo "  Configuration: /var/lib/tracex/"
+echo "  Logs: /var/lib/tracex/logs/"
 echo ""
