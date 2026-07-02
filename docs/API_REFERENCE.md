@@ -363,6 +363,6 @@ detector.export_report("anomaly_report.json")
 Support
 GitHub: https://github.com/raffelsfuxk/FORENSIX
 
-Author: CR0WNNE0_fuxv>#SUDOIT
+Author: raffelsfuxk
 
 License: MIT

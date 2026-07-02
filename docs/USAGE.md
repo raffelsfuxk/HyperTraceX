@@ -206,6 +206,6 @@ Interactive menu > Load Plugins > Enter plugin directory
 
 GitHub: https://github.com/raffelsfuxk/FORENSIX
 GitHub Issues: https://github.com/raffelsfuxk/FORENSIX/issues
-Author: CR0WNNE0_fuxv>#SUDOIT
+Author: raffelsfuxk
 License: MIT
-Copyright (c) 2024 CR0WNNE0_fuxv>#SUDOIT - Ethical Hacker Lab
+Copyright (c) 2024 raffelsfuxk - Ethical Hacker Lab

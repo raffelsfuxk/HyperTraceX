@@ -1,7 +1,7 @@
 # FORENSIX - Enterprise Digital Forensics Platform
 
 **Version:** 1.0.0  
-**Author:** CR0WNNE0_fuxv>#SUDOIT  
+**Author:** raffelsfuxk  
 **License:** MIT
 
 ---
@@ -90,4 +90,4 @@ Never use this tool on systems without proper authorization.
 License:
 MIT License - See LICENSE file for details
 
-Copyright (c) 2024 CR0WNNE0_fuxv>#SUDOIT - Ethical Hacker Lab
+Copyright (c) 2024 raffelsfuxk - Ethical Hacker Lab

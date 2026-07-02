@@ -41,6 +41,6 @@ Q: Update? A: git pull && sudo bash install.sh
 
 ## Support
 GitHub Issues: https://github.com/raffelsfuxk/FORENSIX/issues
-Author: CR0WNNE0_fuxv>#SUDOIT
+Author: raffelsfuxk
 License: MIT
 Version: 1.0.0

@@ -1,6 +1,6 @@
 #!/bin/bash
 # FORENSIX - Digital Forensics Platform Installer
-# Created by: CR0WNNE0_fuxv>#SUDOIT
+# Created by: raffelsfuxk
 
 echo "========================================="
 echo "  FORENSIX - Digital Forensics Platform"

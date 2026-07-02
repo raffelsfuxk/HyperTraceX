@@ -6,7 +6,7 @@
 A: FORENSIX is an enterprise-grade digital forensics platform for forensic acquisition, analysis, and reporting. It supports Windows, Linux, Mac, mobile, cloud, IoT, drone, vehicle, and SCADA forensics.
 
 **Q: Who created FORENSIX?**
-A: CR0WNNE0_fuxv>#SUDOIT - Ethical Hacker Lab
+A: raffelsfuxk - Ethical Hacker Lab
 
 **Q: Is FORENSIX free?**
 A: Yes! FORENSIX is open-source under MIT License.
@@ -85,4 +85,4 @@ A: NO! FORENSIX is for authorized forensic investigations only. Unauthorized use
 
 GitHub: https://github.com/raffelsfuxk/FORENSIX
 Issues: https://github.com/raffelsfuxk/FORENSIX/issues
-Author: CR0WNNE0_fuxv>#SUDOIT
+Author: raffelsfuxk

@@ -13,7 +13,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="forensix",
     version="1.0.0",
-    author="CR0WNNE0_fuxv>#SUDOIT",
+    author="raffelsfuxk",
     author_email="forensix@example.com",
     description="Enterprise Digital Forensics Platform",
     long_description=long_description,

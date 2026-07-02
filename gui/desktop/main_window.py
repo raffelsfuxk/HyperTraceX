@@ -392,7 +392,7 @@ class MainWindow:
             "About FORENSIX",
             "FORENSIX v1.0.0\n"
             "Enterprise Digital Forensics Platform\n\n"
-            "Author: CR0WNNE0_fuxv>#SUDOIT\n"
+            "Author: raffelsfuxk\n"
             "License: MIT\n"
             "GitHub: https://github.com/raffelsfuxk/FORENSIX"
         )

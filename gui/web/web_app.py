@@ -317,7 +317,7 @@ class WebApp:
                 </div>
                 
                 <div class="footer">
-                    FORENSIX v1.0.0 | CR0WNNE0_fuxv>#SUDOIT | MIT License
+                    FORENSIX v1.0.0 | raffelsfuxk | MIT License
                 </div>
             </div>
         </div>

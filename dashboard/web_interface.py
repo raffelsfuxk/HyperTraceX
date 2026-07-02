@@ -195,7 +195,7 @@ class WebDashboard:
         </div>
 
         <div class="footer">
-            FORENSIX v1.0.0 | CR0WNNE0_fuxv>#SUDOIT
+            FORENSIX v1.0.0 | raffelsfuxk
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>

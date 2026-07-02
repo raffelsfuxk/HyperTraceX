@@ -107,4 +107,4 @@ Response: {"cases": 5, "evidence_count": 200, "active_tasks": 2, "recent": [...]
 
 ## Support
 GitHub: https://github.com/raffelsfuxk/FORENSIX
-Author: CR0WNNE0_fuxv>#SUDOIT
+Author: raffelsfuxk

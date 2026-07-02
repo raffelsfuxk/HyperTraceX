@@ -22,7 +22,7 @@ from core.config import ConfigManager
 from core.logger import setup_logging, get_logger
 
 __version__ = "1.0.0"
-__author__ = "CR0WNNE0_fuxv>#SUDOIT"
+__author__ = "raffelsfuxk"
 
 class ForensixEngine:
     """
