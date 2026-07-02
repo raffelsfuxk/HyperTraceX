@@ -90,4 +90,4 @@ Never use this tool on systems without proper authorization.
 License:
 MIT License - See LICENSE file for details
 
-Copyright (c) 2024 raffelsfuxk - Ethical Hacker Lab
+Copyright (c) 2024 raffelsfuxk 
